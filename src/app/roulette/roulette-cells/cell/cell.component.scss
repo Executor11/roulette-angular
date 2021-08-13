@@ -1,0 +1,59 @@
+.cell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  border: 3px solid #c8a351;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.red {
+    background-color: #f55231;
+  }
+  &.black {
+    background-color: #434343;
+  }
+  &.green {
+    background-color: #5eb106;
+  }
+  &.active {
+    animation: win 0.7s ease-in-out infinite alternate;
+    cursor: pointer;
+  }
+
+  span {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.chip__betted {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -95%) rotate(180deg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.bottom {
+    top: 50%;
+    left: 95%;
+    transform: translate(-95%, -50%);
+  }
+}
+
+@keyframes win {
+  0% {
+    color: rgb(184, 248, 148);
+  }
+  to {
+    color: transparent;
+  }
+}

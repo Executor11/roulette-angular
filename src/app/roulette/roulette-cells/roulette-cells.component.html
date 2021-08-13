@@ -1,0 +1,7 @@
+<div class="roullete__cells">
+  <app-cell
+    *ngFor="let cell of cells; let i = index"
+    class="cell{{ i + 1 }}"
+    [cells]="cell"
+  ></app-cell>
+</div>

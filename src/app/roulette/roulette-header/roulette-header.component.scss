@@ -1,0 +1,62 @@
+.roulette__header {
+  width: 95%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .money {
+    width: 200px;
+    height: 60px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+
+    background-color: rgb(77, 71, 71);
+
+    border: 0.2rem solid rgb(59, 190, 47);
+    border-radius: 2rem;
+
+    color: #fff;
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    width: 500px;
+    height: 60px;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 40px;
+      overflow: hidden;
+
+      margin: 1px;
+
+      color: #fff;
+
+      font-size: 1.5rem;
+      &.red {
+        background-color: #f55231;
+      }
+      &.black {
+        background-color: #434343;
+      }
+      &.green {
+        background-color: #5eb106;
+      }
+    }
+  }
+}

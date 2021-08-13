@@ -1,0 +1,22 @@
+<div
+  class="cell"
+  [class]="cells.background"
+  [ngClass]="{ active: betService.canIBet }"
+  (click)="betChip()"
+>
+  <div *ngFor="let chip of betService.bettedCells">
+    <div
+      *ngIf="chip.cell == cells.cell"
+      [class]="'chip__betted ' + cells.background"
+      [style.BackgroundImage]="'url(./assets/img/' + chip.money + '.png)'"
+      [ngStyle]="
+        cells.background.includes('bottom')
+          ? { left: 40 + chip.index * 4 + '%' }
+          : { top: 45 + chip.index * 4 + '%' }
+      "
+    ></div>
+  </div>
+  <span>
+    {{ cells.cell }}
+  </span>
+</div>

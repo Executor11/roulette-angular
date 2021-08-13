@@ -1,0 +1,21 @@
+<div class="bets__wrapper">
+  <button
+    class="bets__button"
+    (click)="betService.spin()"
+    [disabled]="betService.isDisabled"
+  >
+    Spin
+  </button>
+  <div class="bet">
+    <div *ngFor="let bet of bets">
+      <div
+        class="bet__item"
+        (click)="setBet($event)"
+        class="chip"
+        [attr.data-chip]="bet.chip"
+        [style.backgroundImage]="'url(' + bet.img + ')'"
+        *ngIf="moneyService.money >= bet.chip"
+      ></div>
+    </div>
+  </div>
+</div>

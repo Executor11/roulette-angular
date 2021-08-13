@@ -1,0 +1,17 @@
+<div class="roulette__header">
+  <div class="ball_wins">
+    <ul>
+      <li
+        *ngFor="let old of betService.oldWins"
+        [ngClass]="{
+          red: redNumbers.includes(old),
+          black: blackNumbers.includes(old),
+          green: old == 0
+        }"
+      >
+        {{ old }}
+      </li>
+    </ul>
+  </div>
+  <div class="money">${{ moneyService.getMoney() }}</div>
+</div>

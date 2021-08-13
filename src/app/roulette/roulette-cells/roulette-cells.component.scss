@@ -1,0 +1,171 @@
+.roullete__cells {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  font-size: 2.2rem;
+  color: #fff;
+}
+@for $i from 1 to 41 {
+  .cell#{$i} {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+}
+
+.cell1 {
+  font-size: 3.5rem;
+  grid-area: 1 / 1 / 7 / 2;
+}
+.cell4 {
+  grid-area: 1 / 2 / 3 / 3;
+}
+.cell3 {
+  grid-area: 3 / 2 / 5 / 3;
+}
+.cell2 {
+  grid-area: 5 / 2 / 7 / 3;
+}
+.cell7 {
+  grid-area: 1 / 3 / 3 / 4;
+}
+.cell6 {
+  grid-area: 3 / 3 / 5 / 4;
+}
+.cell5 {
+  grid-area: 5 / 3 / 7 / 4;
+}
+.cell10 {
+  grid-area: 1 / 4 / 3 / 5;
+}
+.cell9 {
+  grid-area: 3 / 4 / 5 / 5;
+}
+.cell8 {
+  grid-area: 5 / 4 / 7 / 5;
+}
+.cell13 {
+  grid-area: 1 / 5 / 3 / 6;
+}
+.cell12 {
+  grid-area: 3 / 5 / 5 / 6;
+}
+.cell11 {
+  grid-area: 5 / 5 / 7 / 6;
+}
+.cell16 {
+  grid-area: 1 / 6 / 3 / 7;
+}
+.cell15 {
+  grid-area: 3 / 6 / 5 / 7;
+}
+.cell14 {
+  grid-area: 5 / 6 / 7 / 7;
+}
+.cell19 {
+  grid-area: 1 / 7 / 3 / 8;
+}
+.cell18 {
+  grid-area: 3 / 7 / 5 / 8;
+}
+.cell17 {
+  grid-area: 5 / 7 / 7 / 8;
+}
+.cell22 {
+  grid-area: 1 / 8 / 3 / 9;
+}
+.cell21 {
+  grid-area: 3 / 8 / 5 / 9;
+}
+.cell20 {
+  grid-area: 5 / 8 / 7 / 9;
+}
+.cell25 {
+  grid-area: 1 / 9 / 3 / 10;
+}
+.cell24 {
+  grid-area: 3 / 9 / 5 / 10;
+}
+.cell23 {
+  grid-area: 5 / 9 / 7 / 10;
+}
+.cell28 {
+  grid-area: 1 / 10 / 3 / 11;
+}
+.cell27 {
+  grid-area: 3 / 10 / 5 / 11;
+}
+.cell26 {
+  grid-area: 5 / 10 / 7 / 11;
+}
+.cell31 {
+  grid-area: 1 / 11 / 3 / 12;
+}
+.cell30 {
+  grid-area: 3 / 11 / 5 / 12;
+}
+.cell29 {
+  grid-area: 5 / 11 / 7 / 12;
+}
+.cell34 {
+  grid-area: 1 / 12 / 3 / 13;
+}
+.cell33 {
+  grid-area: 3 / 12 / 5 / 13;
+}
+.cell32 {
+  grid-area: 5 / 12 / 7 / 13;
+}
+.cell35 {
+  grid-area: 5 / 13 / 7 / 14;
+}
+.cell36 {
+  grid-area: 3 / 13 / 5 / 14;
+}
+.cell37 {
+  grid-area: 1 / 13 / 3 / 14;
+}
+.cell38 {
+  font-size: 1.7rem;
+  grid-area: 1 / 14 / 3 / 15;
+}
+.cell39 {
+  font-size: 1.7rem;
+  grid-area: 3 / 14 / 5 / 15;
+}
+.cell40 {
+  font-size: 1.7rem;
+  grid-area: 5 / 14 / 7 / 15;
+}
+.cell41 {
+  grid-area: 7 / 2 / 8 / 6;
+}
+.cell42 {
+  grid-area: 7 / 6 / 8 / 10;
+}
+.cell43 {
+  grid-area: 7 / 10 / 8 / 14;
+}
+.cell44 {
+  grid-area: 8 / 2 / 9 / 4;
+}
+.cell45 {
+  grid-area: 8 / 4 / 9 / 6;
+}
+.cell46 {
+  grid-area: 8 / 6 / 9 / 8;
+  color: #f55231;
+}
+.cell47 {
+  grid-area: 8 / 8 / 9 / 10;
+  color: #434343;
+}
+.cell48 {
+  grid-area: 8 / 10 / 9 / 12;
+}
+.cell49 {
+  grid-area: 8 / 12 / 9 / 14;
+}
