@@ -9,16 +9,18 @@
   justify-content: center;
   align-items: center;
 
+  user-select: none;
+
   &.red {
-    background-color: #f55231;
+    background-color: #ae000e;
   }
   &.black {
-    background-color: #434343;
+    background-color: #111;
   }
   &.green {
     background-color: #5eb106;
   }
-  &.active {
+  &.active:hover {
     animation: win 0.7s ease-in-out infinite alternate;
     cursor: pointer;
   }
@@ -51,9 +53,10 @@
 
 @keyframes win {
   0% {
-    color: rgb(184, 248, 148);
+    color: rgb(97, 252, 7);
   }
   to {
     color: transparent;
+    background-color: transparent;
   }
 }

@@ -12,6 +12,8 @@ export class BetService {
 
   bettedCells: any[] = [];
 
+  bettedAverage = 0;
+
   chip: number = 1000;
 
   oldWins: Array<number> = [];
@@ -22,30 +24,34 @@ export class BetService {
   ) {}
 
   spin() {
-    const randomDegrees = Math.floor(Math.random() * 360) - 3600;
-    this.spinRouletteService.setDegrees(randomDegrees);
-    this.spins = true;
-    this.isDisabled = true;
+    if (!this.canIBet) {
+      const randomDegrees = Math.floor(Math.random() * 360) - 3600;
+      this.spinRouletteService.setDegrees(randomDegrees);
+      this.spins = true;
+      this.isDisabled = true;
 
-    setTimeout(() => {
-      this.isDisabled = false;
-      this.spins = false;
-      let win = this.spinRouletteService.winNumber;
-      let gain = 0;
+      setTimeout(() => {
+        this.isDisabled = false;
+        this.spins = false;
+        let win = this.spinRouletteService.winNumber;
+        let gain = 0;
 
-      this.oldWins.unshift(win);
+        this.oldWins.unshift(win);
 
-      this.bettedCells.map((bet) => {
-        if (bet.wins.includes(win)) {
-          console.log(bet.cell, bet.money * bet.multiplier);
-          gain += bet.money * bet.multiplier;
-        }
-      });
-      this.moneyService.setMoney(this.moneyService.getMoney() + gain);
-      this.bettedCells = [];
-    }, 16000);
+        this.bettedCells.map((bet) => {
+          if (bet.wins.includes(win)) {
+            console.log(bet.cell, bet.money * bet.multiplier);
+            gain += bet.money * bet.multiplier;
+          }
+        });
+        this.moneyService.setMoney(this.moneyService.getMoney() + gain);
+        this.bettedCells = [];
 
-    this.spinRouletteService.state.next('start');
-    this.spinRouletteService.state.next('stop');
+        this.bettedAverage = 0;
+      }, 16000);
+
+      this.spinRouletteService.state.next('start');
+      this.spinRouletteService.state.next('stop');
+    }
   }
 }

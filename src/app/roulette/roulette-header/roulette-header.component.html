@@ -6,7 +6,7 @@
         [ngClass]="{
           red: redNumbers.includes(old),
           black: blackNumbers.includes(old),
-          green: old == 0
+          green: [0].includes(old)
         }"
       >
         {{ old }}

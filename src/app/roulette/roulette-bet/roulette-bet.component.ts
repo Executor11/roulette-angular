@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { BetService } from '../shared/bet.service';
 import { MoneyService } from '../shared/money.service';
 import { SpinRouletteService } from '../shared/spin-roulette.service';
@@ -9,6 +15,16 @@ import { SpinRouletteService } from '../shared/spin-roulette.service';
   styleUrls: ['./roulette-bet.component.scss'],
 })
 export class RouletteBetComponent implements OnInit {
+  @ViewChild('chip') chip!: ElementRef;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: any) {
+    if (this.betService.canIBet) {
+      this.chip.nativeElement.style.left = event.pageX - 25 + 'px';
+      this.chip.nativeElement.style.top = event.pageY - 25 + 'px';
+    }
+  }
+
   bets: any[] = [
     { img: './assets/img/10.png', chip: 10 },
     { img: './assets/img/20.png', chip: 20 },
@@ -36,6 +52,9 @@ export class RouletteBetComponent implements OnInit {
       this.betService.canIBet = !this.betService.canIBet;
       if (this.betService.canIBet) {
         this.betService.chip = event.target.getAttribute('data-chip');
+
+        this.chip.nativeElement.style.left = event.pageX - 40 + 'px';
+        this.chip.nativeElement.style.top = event.pageY - 40 + 'px';
       }
     }
   }

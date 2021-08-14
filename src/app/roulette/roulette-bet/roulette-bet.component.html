@@ -6,11 +6,17 @@
   >
     Spin
   </button>
+  <div
+    [hidden]="!betService.canIBet"
+    #chip
+    class="bet__selected"
+    [style.BackgroundImage]="'url(./assets/img/' + betService.chip + '.png)'"
+  ></div>
   <div class="bet">
     <div *ngFor="let bet of bets">
       <div
         class="bet__item"
-        (click)="setBet($event)"
+        (mousedown)="setBet($event)"
         class="chip"
         [attr.data-chip]="bet.chip"
         [style.backgroundImage]="'url(' + bet.img + ')'"
@@ -18,4 +24,5 @@
       ></div>
     </div>
   </div>
+  <div class="average">${{ betService.bettedAverage }}</div>
 </div>
