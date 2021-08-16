@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { RouletteComponent } from './roulette/roulette.component';
 import { RouletteBallComponent } from './roulette/roulette-spin/roulette-ball/roulette-ball.component';
+import { PopupComponent } from './roulette/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RouletteBallComponent } from './roulette/roulette-spin/roulette-ball/ro
     RouletteSpinComponent,
     CellComponent,
     RouletteBallComponent,
+    PopupComponent,
   ],
   imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],

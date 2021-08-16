@@ -1,8 +1,12 @@
 <div
   class="cell"
   [class]="cells.background"
-  [ngClass]="{ active: betService.canIBet }"
+  [ngClass]="{
+    active: cells.background.includes('active')
+  }"
   (click)="betChip()"
+  (mouseenter)="showPosition()"
+  (mouseleave)="hidePosition()"
 >
   <div *ngFor="let chip of betService.bettedCells">
     <div
@@ -16,7 +20,11 @@
       "
     ></div>
   </div>
-  <span>
-    {{ cells.cell }}
+  <span
+    [ngClass]="{
+      rotated: cells.cell == 'b' || cells.cell == 'r'
+    }"
+  >
+    {{ cells.cell == "b" || cells.cell == "r" ? "&#9830;" : cells.cell }}
   </span>
 </div>

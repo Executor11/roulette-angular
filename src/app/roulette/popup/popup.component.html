@@ -1,0 +1,21 @@
+<div class="popup_container" *ngIf="!resumed">
+  <div class="header">{{ continue ? "Resume" : "European Roulette" }}</div>
+  <div class="chip_logo"></div>
+  <div class="money">
+    {{ continue ? "last balance" : "Start with" }}: ${{
+      continue ? moneyService.getMoney() : "2500"
+    }}
+  </div>
+  <div class="btns">
+    <button class="new_game" (click)="newGame()">New game</button>
+    <button class="resume" (click)="resume()" *ngIf="continue">Resume</button>
+  </div>
+</div>
+<div class="backdrop" *ngIf="!resumed"></div>
+
+<div class="powered">
+  Powered by
+  <a href="https://www.linkedin.com/in/leonid-zakhariants/" target="blank"
+    >Leonid Zakhariants</a
+  >
+</div>
